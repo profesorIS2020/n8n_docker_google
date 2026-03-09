@@ -2,17 +2,17 @@
   "name": "n8n University Class",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "forwardPorts": ["n8n:5678"],
+  "workspaceFolder": "/workspaces/n8n_docker_google",
+  "forwardPorts": [5678],
   "portsAttributes": {
-    "n8n:5678": {
+    "5678": {
       "label": "n8n Panel",
       "onAutoForward": "openBrowser"
     }
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-       "moby": false
+      "moby": false
     }
   }
 }
