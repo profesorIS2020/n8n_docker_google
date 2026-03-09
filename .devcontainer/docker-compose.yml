@@ -1,4 +1,10 @@
 services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20
+    volumes:
+      - ..:/workspace:cached
+    network_mode: service:n8n # Esto permite que 'app' vea a 'n8n' como localhost
+
   n8n:
     image: n8nio/n8n:latest
     ports:
@@ -6,7 +12,7 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
     environment:
-      - N8N_SECURE_COOKIE=false # Útil para entornos de desarrollo en navegador
+      - N8N_SECURE_COOKIE=false
 
 volumes:
   n8n_data:
