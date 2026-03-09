@@ -1,10 +1,4 @@
 services:
-  app:
-    image: mcr.microsoft.com/devcontainers/javascript-node:20
-    volumes:
-      - ..:/workspaces/n8n_docker_google:cached
-    command: sleep infinity
-
   n8n:
     image: n8nio/n8n:1.82.3
     environment:
@@ -12,10 +6,22 @@ services:
       - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_EDITOR_BASE_URL=https://${CODESPACE_NAME}-5678.app.github.dev/
+      - WEBHOOK_URL=https://${CODESPACE_NAME}-5678.app.github.dev/
     volumes:
       - n8n_data:/home/node/.n8n
     expose:
       - "5678"
+
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20
+    volumes:
+      - ..:/workspaces/n8n_docker_google:cached
+    command: sleep infinity
+    depends_on:
+      - n8n
+    network_mode: service:n8n
 
 volumes:
   n8n_data:
