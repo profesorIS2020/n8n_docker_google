@@ -1,20 +1,20 @@
 {
   "name": "n8n University Class",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
+  "service": "n8n",
   "workspaceFolder": "/workspaces/n8n_docker_google",
   "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
       "label": "n8n Panel",
-      "onAutoForward": "openBrowser",
-      "visibility": "public"
+      "onAutoForward": "openBrowser"
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "moby": false
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
     }
   }
 }
-
