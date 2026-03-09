@@ -1,15 +1,15 @@
 {
   "name": "n8n University Environment",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app", // Apuntamos al contenedor de Node, no al de n8n
+  "service": "app",
   "workspaceFolder": "/workspace",
   "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
-      "label": "n8n Dashboard",
+      "label": "Panel de n8n",
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "echo 'Entorno listo. n8n corriendo en el puerto 5678'"
+  "postCreateCommand": "echo 'Entorno listo. n8n corriendo en segundo plano.'"
 }
 
