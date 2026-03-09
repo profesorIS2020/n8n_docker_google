@@ -1,11 +1,11 @@
 {
   "name": "n8n University Class",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app", // Muy importante: VS Code arranca en 'app'
+  "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "forwardPorts": [5678],
+  "forwardPorts": ["n8n:5678"],
   "portsAttributes": {
-    "5678": {
+    "n8n:5678": {
       "label": "n8n Panel",
       "onAutoForward": "openBrowser"
     }
