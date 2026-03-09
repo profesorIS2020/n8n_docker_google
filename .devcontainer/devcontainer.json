@@ -10,6 +10,8 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "echo 'Entorno listo. n8n está operativo en el puerto 5678'"
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  }
 }
 
