@@ -9,10 +9,5 @@
       "label": "n8n Panel",
       "onAutoForward": "openBrowser"
     }
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "moby": false
-    }
   }
 }
