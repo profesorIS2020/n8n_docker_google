@@ -2,7 +2,7 @@ services:
   app:
     image: mcr.microsoft.com/devcontainers/javascript-node:20
     volumes:
-      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
+      - ..:/workspaces/n8n_docker_google:cached
     command: sleep infinity
 
   n8n:
