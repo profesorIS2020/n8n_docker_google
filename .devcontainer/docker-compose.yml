@@ -1,12 +1,12 @@
 services:
-  # Este contenedor sirve como base para VS Code
+  # Este contenedor es donde "vive" VS Code y el alumno escribe
   app:
     image: mcr.microsoft.com/devcontainers/javascript-node:20
     volumes:
-      - ..:/workspace:cached
-    network_mode: service:n8n # Permite que 'app' vea a 'n8n' como localhost
+      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
+    network_mode: service:n8n # Conecta ambos contenedores por red local
 
-  # Este es el servidor de n8n real
+  # Este es el servidor de n8n corriendo en segundo plano
   n8n:
     image: n8nio/n8n:latest
     ports:

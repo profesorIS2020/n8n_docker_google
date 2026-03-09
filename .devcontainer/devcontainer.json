@@ -1,15 +1,15 @@
 {
-  "name": "n8n University Environment",
+  "name": "n8n University Class",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "service": "app", // Muy importante: VS Code arranca en 'app'
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
-      "label": "Panel de n8n",
+      "label": "n8n Panel",
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "echo 'Entorno listo. n8n corriendo en segundo plano.'"
+  "postCreateCommand": "echo 'Entorno listo. n8n está operativo en el puerto 5678'"
 }
 
